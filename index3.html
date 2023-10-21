@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <style>
+       body{
+        height: 100vh;
+        display:grid;
+        place-items: center;
+        background-color: aqua;
+       }
+       .loader{
+        width:20rem;
+        aspect-ratio:1;
+        border-radius: 50%;
+        background-color: blueviolet;
+        position: relative;
+        animation: circleloader 4s linear infinite reverse;
+       }
+    @keyframes circleloader{
+        100%{
+            rotate: 360deg;
+        }
+       }
+       .loader::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 17rem;
+        border-radius: 50%;
+        background-color:black;
+        aspect-ratio:1;
+       }
+       .loader::after{
+        content: "";
+        position: absolute;
+        top: -2.5rem;
+        left: 7rem;
+        width: 5rem;
+        border-radius: 50%;
+        background-color:#865dff;
+        box-shadow: 0 0 1rem #865dff,0 0 1.5rem #865dff,0 0 2rem #865dff,0 0 2.5rem #865dff,0 0 3rem #865dff;
+        aspect-ratio:1;
+       }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
